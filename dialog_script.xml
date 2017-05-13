@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add a clause"/>
+    <EditText
+        android:id="@+id/dialog_edit"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:lines="2"/>
+
+    <LinearLayout
+        android:id="@+id/dialog_script_trigger_linear"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select a Trigger"
+            android:layout_weight="1"/>
+        <Spinner
+            android:id="@+id/dialog_script_trigger_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"></Spinner>
+        <Spinner
+            android:id="@+id/dialog_script_trigger_modifier_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"></Spinner>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/dialog_script_action_linear"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action"
+            android:layout_weight="1"/>
+        <Spinner
+            android:id="@+id/dialog_script_action_verb_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"></Spinner>
+        <Spinner
+            android:id="@+id/dialog_script_action_modifier_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"></Spinner>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/add_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add action"
+            android:layout_alignParentLeft="true"/>
+        <Button
+            android:id="@+id/dialogButtonOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ok "
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</LinearLayout>

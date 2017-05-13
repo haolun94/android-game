@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_choose"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.stanford.cs108.bunnyworld.MainChooseActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:text="Please type a new game name:"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edit_game_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Create new game"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:onClick="onCreateNewGame"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:text="or open an existing game:"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/game_spinner"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"></Spinner>
+        <Button
+            android:text="open game"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:onClick="onOpenGame"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create images"
+        android:onClick="onCreateNewImg"/>
+    <Button
+        android:id="@+id/upload_images"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload images"
+        android:onClick="onUploadImages"/>
+	<Button
+        android:id="@+id/upload_images"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Upload audios"
+        android:onClick="onImportFiles"/>
+
+
+</LinearLayout>
+

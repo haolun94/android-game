@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_edit_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingRight="16dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.stanford.cs108.bunnyworld.editPageActivity">
+    <TextView
+        android:id="@+id/page_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:text="Page name: " />
+    <EditText
+        android:id="@+id/page_name_edit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/page_name_text"/>
+
+
+    <edu.stanford.cs108.bunnyworld.CustomView
+        android:id="@+id/custom_view"
+        android:layout_below="@id/page_name_edit"
+        android:layout_width="1000dp"
+        android:layout_height="450dp"
+        android:layout_alignParentLeft="true"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="1000dp"
+        android:layout_height="0dp"
+        android:layout_below="@id/custom_view"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:id="@+id/script_linear"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="script"/>
+            <EditText
+                android:id="@+id/script_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="2"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add a new clause"
+                    android:onClick="onAddClause"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/selection_mode"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/custom_view"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/custom_view">
+        <RadioButton
+            android:id="@+id/create_new_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a new shape"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/select_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select a shape"/>
+        <RadioButton
+            android:id="@+id/erase_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Erase a shape"/>
+
+    </RadioGroup>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/image_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/custom_view"
+        android:layout_below="@id/selection_mode">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image Name:"/>
+
+        <Spinner
+            android:id="@+id/image_name_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/geometry"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/custom_view"
+        android:layout_below="@+id/image_linear"
+        android:layout_alignParentRight="true"
+        android:layout_width="0dp"
+        android:layout_height="120dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Left, Top"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/left_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:lines="1"/>
+
+            <EditText
+                android:id="@+id/top_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:lines="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Right, Bottom"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/right_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:lines="1"/>
+
+
+            <EditText
+                android:id="@+id/bottom_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:lines="1"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/checkbox_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/custom_view"
+        android:layout_below="@id/geometry">
+        <CheckBox
+            android:id="@+id/movable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="movable" />
+        <CheckBox
+            android:id="@+id/visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="visible"/>
+        <CheckBox
+            android:id="@+id/scale_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scale"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/font_linear"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@id/custom_view"
+        android:layout_below="@+id/shape_name_edit">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Font Size"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/font_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_weight="2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/custom_view"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="left">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bold" />
+            <CheckBox
+                android:id="@+id/italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="italic"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Font Color:"/>
+        <EditText
+            android:id="@+id/font_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COPY"
+
+                android:onClick="onCopy"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PASTE"
+
+                android:onClick="onPaste"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:layout_gravity="right"
+                android:onClick="onApply_editPageAct"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/text_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@+id/checkbox_linear"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/custom_view">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text:"/>
+        <EditText
+            android:id="@+id/text_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/shape_name_edit"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/custom_view"
+        android:layout_below="@id/text_linear">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shape Name"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/shape_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
